@@ -1,0 +1,7 @@
+{
+  "name": "expo-my-turbo-module",
+  "platforms": ["ios"],
+  "ios": {
+    "modules": ["MyTurboModule"]
+  }
+}
