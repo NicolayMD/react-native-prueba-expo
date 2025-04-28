@@ -1,0 +1,10 @@
+{
+    "name": "my-native-module",
+    "version": "1.0.0",
+    "main": "src/index.ts",
+    "expo-module": {
+      "androidPackage": "com.mycompany.mynativemodule",
+      "iosModuleName": "MyNativeModule"
+    }
+  }
+  

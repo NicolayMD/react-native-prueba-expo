@@ -1,0 +1,10 @@
+{
+    "name": "MyNativeModule",
+    "android": {
+      "package": "com.mycompany.mynativemodule"
+    },
+    "ios": {
+      "modulesClassNames": ["MyNativeModule"]
+    }
+  }
+  

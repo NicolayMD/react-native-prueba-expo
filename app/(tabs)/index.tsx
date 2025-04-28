@@ -8,6 +8,8 @@ import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 //import { getEnforcing } from 'expo-modules-core';
+import { helloWorld } from '../../packages/my-native-module';
+
 
 
 
@@ -15,6 +17,7 @@ export default function HomeScreen() {
   const [platformName, setPlatformName] = useState<string | null>(null);
 
   useEffect(() => {
+    console.log('EXpoModule disponible',helloWorld());
     try {
       const turbo = requireNativeModule('MyTurboModule');
       const result = turbo.getPlatformName?.();
