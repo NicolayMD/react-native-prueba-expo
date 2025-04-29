@@ -1,35 +1,15 @@
-import { Image, StyleSheet, Platform } from 'react-native';
-import { requireNativeModule } from 'expo-modules-core';
-
+import { Image, StyleSheet, Platform, Text } from 'react-native';
 import { useEffect, useState } from 'react';
-
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
-//import { getEnforcing } from 'expo-modules-core';
-import { helloWorld } from '../../packages/my-native-module';
-
-
+import MyTestModule from '@/modules/my-test-module/src/MyTestModule';
 
 
 export default function HomeScreen() {
   const [platformName, setPlatformName] = useState<string | null>(null);
-
-  useEffect(() => {
-    console.log('EXpoModule disponible',helloWorld());
-    try {
-      const turbo = requireNativeModule('MyTurboModule');
-      const result = turbo.getPlatformName?.();
-      console.log('✅ TurboModule dice:', result);
-      setPlatformName(result);
-    } catch (error) {
-      console.warn('❌ TurboModule no disponible', error);
-      setPlatformName('TurboModule no disponible');
-    }
-  }, []);
   
-
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
@@ -42,6 +22,8 @@ export default function HomeScreen() {
     >
       <ThemedView style={styles.titleContainer}>
         <ThemedText type="title">
+        <Text>{MyTestModule.hello()}</Text>
+        <Text>{MyTestModule.sumita(3,498)}</Text>
           Bienvenido desde {Platform.OS.toUpperCase()}
         </ThemedText>
         <HelloWave />
