@@ -8,7 +8,6 @@ jobs:
   deploy-test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions
       - run: echo "hacemos pull"
       - run: echo "corre paso 1"
       - run: echo "corre paso 2"
