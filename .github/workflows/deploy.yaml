@@ -1,0 +1,15 @@
+name: "my-app"
+
+on:
+  push:
+    branches: ["main"]
+
+jobs: 
+  deploy-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions
+      - run: echo "hacemos pull"
+      - run: echo "corre paso 1"
+      - run: echo "corre paso 2"
+      - run: echo "corre paso 3"
